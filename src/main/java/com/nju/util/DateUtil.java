@@ -3,6 +3,7 @@
  */
 package com.nju.util;
 
+import java.sql.Timestamp;
 import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -442,5 +443,11 @@ public class DateUtil {
 		String newstring = newstr.substring(0, i) + "Äê" + newmonth + "ÔÂ"
 				+ newday + "ÈÕ";
 		return newstring;
+	}
+	
+	public static Timestamp getTime(String time) {
+		if(time.equals("")) return null;
+		Date outDate = parse(time, noSecondFormat);
+		return new Timestamp(outDate.getTime());
 	}
 }

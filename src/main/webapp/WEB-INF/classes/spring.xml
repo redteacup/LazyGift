@@ -131,7 +131,8 @@
 
 <!-- Service -->
 	<bean id="userService" class="com.nju.service.impl.UserServiceImpl"></bean>
-	
+	<bean id="orderService" class="com.nju.service.impl.OrderManagerServiceImpl"></bean>
+	<bean id="goodsService" class="com.nju.service.impl.GoosServiceImpl"></bean>
 	<bean id="multipartResolver"
 		class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
 		<property name="defaultEncoding" value="UTF-8" />

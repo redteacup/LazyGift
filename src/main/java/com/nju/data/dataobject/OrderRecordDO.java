@@ -1,5 +1,6 @@
 package com.nju.data.dataobject;
 
+import java.sql.Timestamp;
 import java.util.Date;
 
 import javax.persistence.Column;
@@ -18,14 +19,16 @@ public class OrderRecordDO {
 	private String action;
 	private String remark;
 	private String pos;
-	private Date createTime;
+	private Timestamp createTime;
+	
+
 	
 	public OrderRecordDO() {
 		super();
 	}
 	
 	public OrderRecordDO(long id, long orderId, String action, String remark,String pos,
-			Date createTime) {
+			Timestamp createTime) {
 		super();
 		this.id = id;
 		this.orderId = orderId;
@@ -67,6 +70,7 @@ public class OrderRecordDO {
 		return createTime;
 	}
 
+
 	public void setId(long id) {
 		this.id = id;
 	}
@@ -87,8 +91,9 @@ public class OrderRecordDO {
 		this.pos = pos;
 	}
 
-	public void setCreateTime(Date createTime) {
+	public void setCreateTime(Timestamp createTime) {
 		this.createTime = createTime;
 	}
+
 
 }

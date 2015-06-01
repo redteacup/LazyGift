@@ -4,6 +4,7 @@ import java.util.List;
 
 import com.nju.service.GoodService;
 import com.nju.data.dao.GoodsDao;
+import com.nju.data.dataobject.GoodsDO;
 
 public class GoodServiceImpl implements GoodService{
 
@@ -23,5 +24,11 @@ public class GoodServiceImpl implements GoodService{
 		}
 		return result;
 	}
+
+	@Override
+	public GoodsDO getGoodsByName(String orderGoodsName) {
+		// TODO Auto-generated method stub
+		return goodsDao.findGoodsByGoodsName(orderGoodsName);
+ 	}
 	
 }

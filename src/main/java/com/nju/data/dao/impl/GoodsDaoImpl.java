@@ -25,4 +25,15 @@ public class GoodsDaoImpl extends HibernateDaoSupport implements GoodsDao{
 		return namelist;
 	}
 
+	@SuppressWarnings("unchecked")
+	@Override
+	public GoodsDO findGoodsByGoodsName(String goodsName) {
+		// TODO Auto-generated method stub
+		String sql = "from GoodsDO where name = '"+goodsName+"'";
+		Session se = this.currentSession();
+		Query qu = se.createQuery(sql);
+ 		List<GoodsDO> list = qu.list();
+		return list.get(0);
+	}
+
 }
