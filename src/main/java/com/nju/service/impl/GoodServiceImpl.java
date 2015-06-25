@@ -2,12 +2,15 @@ package com.nju.service.impl;
 
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
+
 import com.nju.service.GoodService;
 import com.nju.data.dao.GoodsDao;
 import com.nju.data.dataobject.GoodsDO;
 
 public class GoodServiceImpl implements GoodService{
 
+	@Autowired
 	private GoodsDao goodsDao;
 
 	@Override
