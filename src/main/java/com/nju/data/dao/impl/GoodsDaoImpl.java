@@ -4,6 +4,7 @@ import java.util.List;
 
 import com.nju.data.dao.GoodsDao;
 import com.nju.data.dataobject.GoodsDO;
+import com.nju.model.Good;
 
 import org.hibernate.Query;
 import org.hibernate.Session;
@@ -12,17 +13,14 @@ import org.springframework.orm.hibernate4.support.HibernateDaoSupport;
 public class GoodsDaoImpl extends HibernateDaoSupport implements GoodsDao{
 
 	@Override
-	public List<String> getGoodsList() {
+	public List<Good> getGoodsList() {
 		
 		String sql = "from Goods";
 		Session se = this.currentSession();
 		Query qu = se.createQuery(sql);
-		List<GoodsDO> list = (List<GoodsDO>)qu.list();
-		List<String> namelist = null;
-		for(GoodsDO g:list){
-			namelist.add(g.getName());
-		}
-		return namelist;
+		List<Good> list = (List<Good>)qu.list();
+		
+		return list;
 	}
 
 	@SuppressWarnings("unchecked")
