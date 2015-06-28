@@ -2,6 +2,8 @@ package com.nju.data.dao.impl;
 
 import java.util.List;
 
+import org.hibernate.Query;
+import org.hibernate.Session;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.orm.hibernate4.support.HibernateDaoSupport;
@@ -36,5 +38,19 @@ public class OrderDaoImpl extends HibernateDaoSupport implements OrderDao{
 			throw re;
 		}
 	}
-
+	
+	@SuppressWarnings("unchecked")
+	public OrderDO findOrderById(int orderId) {
+		long id = (long) orderId;
+//		String sql = "from OrderDO where id = '"+id+"'";
+		String sql = "from OrderDO where id = 1";
+		Session se = this.currentSession();	
+		Query q = se.createQuery(sql);		
+		List<OrderDO> result = q.list();
+		System.out.println(result.get(0));
+		
+		return result.size()==0?null:result.get(0);
+	}
+	
+	
 }

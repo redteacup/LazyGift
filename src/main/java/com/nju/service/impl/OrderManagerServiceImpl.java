@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 
+import com.google.gson.Gson;
 import com.nju.data.dao.GoodsDao;
 import com.nju.data.dataobject.OrderDO;
 import com.nju.model.Order;
@@ -17,10 +18,7 @@ public class OrderManagerServiceImpl implements OrderManagerService{
 	private OrderDao orderDao;
 	@Autowired
 	private GoodsDao goodsDao;
-	@Autowired
-	private GoodsDao StaffDao;
-	@Autowired
-	private GoodsDao OrderDao;
+
 	
 
 	
@@ -42,6 +40,14 @@ public class OrderManagerServiceImpl implements OrderManagerService{
 		// TODO Auto-generated method stub
 		orderDao.save(order);
 		return false;
+	}
+	
+	@Override
+	public String findOrder(int orderId) {		
+		OrderDO orderDo = orderDao.findOrderById(orderId);
+		Gson gson = new Gson();
+		String str = gson.toJson(orderDo);
+		return str;		
 	}
 
 }

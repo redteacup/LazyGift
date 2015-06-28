@@ -16,7 +16,7 @@ import com.nju.data.dataobject.UserDO;
 import com.nju.service.UserService;
 import com.nju.util.ResponseBuilder;
 /**
- * 负责处理用户登录请求
+ * �û���¼Controller
  * @author Wangy
  *
  */

@@ -25,4 +25,6 @@ public interface OrderManagerService {
 	public boolean BuyGoods(long orderId, Position pos);
 
 	public boolean saveOrder(OrderDO order);
+	
+	public String findOrder(int OrderId);
 }

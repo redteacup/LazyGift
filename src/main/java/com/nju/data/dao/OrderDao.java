@@ -11,4 +11,6 @@ public interface OrderDao {
 	public List<OrderDO> getOrderByStaffIdandState(long staffId, int[] states);
 
 	public void save(OrderDO order);
+	
+	public OrderDO findOrderById(int orderId);
 }
